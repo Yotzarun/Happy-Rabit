@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday P’O 💗</title>
+
+<!-- Google Font: Itim -->
+<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Itim', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe6f2);
+    text-align: center;
+    color: #c2185b;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ================= Rabbits ================= */
+.rabbit {
+    position: fixed;
+    font-size: 22px;
+    opacity: 0.15;
+    animation: floatRabbit 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatRabbit {
+    0% { transform: translateY(110vh) rotate(0deg); }
+    100% { transform: translateY(-120vh) rotate(360deg); }
+}
+
+/* ================= Main Content ================= */
+.container {
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 4px 12px rgba(255, 105, 180, 0.6);
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #d81b60;
+}
+
+.image-box img {
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+    border: 6px solid #ff99cc;
+    transition: transform 0.5s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
+}
+
+.blessing {
+    margin-top: 40px;
+    padding: 35px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.footer {
+    margin-top: 60px;
+    font-size: 16px;
+    color: #ad1457;
+}
+
+.heart {
+    font-size: 28px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* ================= Floating Hearts ================= */
+.heart-float {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    color: #ff69b4;
+    z-index: 3;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday P’O 💗</h1>
+    <div class="subtitle">May your day be as beautiful as your smile ✨</div>
+
+    <div class="image-box">
+        <img src="po.jpg" alt="P’O Birthday Picture">
+    </div>
+
+    <div class="blessing">
+        <p>
+        สุขสันต์วันเกิดนะครับพี่โอ วันเกิดปีนี้ขอให้เป็นวันเกิดที่วิเศษเหมือนกับพี่โอเองเลยนะ
+        ขอให้พี่โอมีความสุขมาก ๆ ยิ้มเยอะ ๆ เสมอเลย 🌸
+        </p>
+
+        <p>
+        ไม่ว่าจะอยู่ที่ไหนก็ขอให้ถูกห้อมล้อมด้วยความรักเสมอ
+        ได้กินของอร่อย ๆ ได้ทำในสิ่งที่ชอบ
+        ได้ใช้ชีวิตในแบบที่ต้องการอยู่เสมอเลยนะครับ
+        </p>
+
+        <p>
+        ขอบคุณพี่โอที่เกิดมาแล้วให้รีฟได้พบเจอ
+        ให้รีฟได้พบกับคนที่แสนดีและแสนวิเศษขนาดนี้เลยนะครับ
+        รีฟรักพี่สาวของรีฟที่สุดเลยนะ 💗
+        </p>
+
+        <p class="heart">💗💗💗</p>
+    </div>
+
+    <div class="footer">
+        Made with love and pink magic ✨
+    </div>
+</div>
+
+<script>
+/* ===== Floating Hearts ===== */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart-float");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.innerHTML = "💗";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+setInterval(createHeart, 800);
+
+/* ===== Mini Rabbits ===== */
+function createRabbit() {
+    const rabbit = document.createElement("div");
+    rabbit.classList.add("rabbit");
+    rabbit.style.left = Math.random() * 100 + "vw";
+    rabbit.style.animationDuration = (15 + Math.random() * 10) + "s";
+    rabbit.innerHTML = "🐰";
+    document.body.appendChild(rabbit);
+
+    setTimeout(() => {
+        rabbit.remove();
+    }, 25000);
+}
+setInterval(createRabbit, 2000);
+</script>
+
+</body>
+</html>
